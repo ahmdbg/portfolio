@@ -582,6 +582,133 @@ main {
   }
 }
 
+/* Update sidebar styles for mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    --sidebar-width: 100%;
+    height: auto;
+    position: relative;
+    margin-bottom: 20px;
+    padding: 15px;
+  }
+
+  /* Layout sidebar info in row for mobile */
+  .sidebar-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    padding: 5px;
+  }
+
+  /* Reduce avatar size on mobile */
+  .avatar-box {
+    min-width: 80px;
+    width: 80px;
+    height: 80px;
+    border-radius: 15px;
+    margin: 0;
+  }
+
+  .avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Adjust text content layout */
+  .info-content {
+    text-align: left;
+    flex: 1;
+  }
+
+  .info-content .name {
+    font-size: var(--fs-4);
+    margin-bottom: 5px;
+  }
+
+  .info-content .title {
+    font-size: var(--fs-8);
+    padding: 3px 10px;
+  }
+
+  /* Style the expand button */
+  .info_more-btn {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    padding: 8px;
+    font-size: 1.2rem;
+  }
+
+  .info_more-btn span {
+    display: none;
+  }
+
+  .info_more-btn ion-icon {
+    display: block;
+    transition: transform 0.3s;
+  }
+
+  /* Adjust expanded content */
+  .sidebar-info_more {
+    padding: 25px 0 0;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transition: all 0.3s ease;
+  }
+
+  .sidebar.active .sidebar-info_more {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+  }
+
+  .sidebar.active .info_more-btn ion-icon {
+    transform: rotate(180deg);
+  }
+
+  /* Adjust contacts layout */
+  .contacts-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .contact-item {
+    min-width: 100%;
+  }
+
+  .social-list {
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 0;
+  }
+}
+
+/* Additional adjustments for very small screens */
+@media (max-width: 480px) {
+  .sidebar-info {
+    gap: 10px;
+  }
+
+  .avatar-box {
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .info-content .name {
+    font-size: var(--fs-5);
+  }
+
+  .contact-info {
+    font-size: var(--fs-7);
+  }
+}
+
 @media (max-width: 480px) {
   .contacts-list {
     grid-template-columns: 1fr;
