@@ -458,7 +458,7 @@ main {
   opacity: 0;
   visibility: hidden;
   height: 0;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 .sidebar.active .sidebar-info_more {
@@ -466,6 +466,8 @@ main {
   visibility: visible;
   height: auto;
   padding-top: 20px;
+  background-color: var(--navy-blue);
+  backdrop-filter: blur(2px);
 }
 
 .contacts-list {
