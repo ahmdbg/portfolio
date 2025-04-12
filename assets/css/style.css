@@ -457,12 +457,15 @@ main {
 .sidebar-info_more {
   opacity: 0;
   visibility: hidden;
-  transition: var(--transition-2);
+  height: 0;
+  transition: all 0.3s ease;
 }
 
 .sidebar.active .sidebar-info_more {
   opacity: 1;
   visibility: visible;
+  height: auto;
+  padding-top: 20px;
 }
 
 .contacts-list {

@@ -3,7 +3,9 @@
 
 
 // element toggle function
-const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
+const elementToggleFunc = function (elem) { 
+  elem.classList.toggle("active"); 
+}
 
 
 
@@ -11,11 +13,17 @@ const elementToggleFunc = function (elem) { elem.classList.toggle("active"); }
 const sidebar = document.querySelector("[data-sidebar]");
 const sidebarBtn = document.querySelector("[data-sidebar-btn]");
 
-// sidebar toggle functionality for mobile
-sidebarBtn.addEventListener("click", function () { elementToggleFunc(sidebar); });
-
+// Hapus event listener yang duplikat dan gunakan satu fungsi toggle
 sidebarBtn.addEventListener("click", function () {
-  sidebar.classList.toggle("active");
+  elementToggleFunc(sidebar);
+  
+  // Tambahkan animasi rotate untuk ikon
+  const icon = this.querySelector('ion-icon');
+  if (icon) {
+    icon.style.transform = sidebar.classList.contains('active') 
+      ? 'rotate(180deg)' 
+      : 'rotate(0deg)';
+  }
 });
 
 
