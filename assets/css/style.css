@@ -23,43 +23,43 @@
 
   /* gradient */
 
-  --bg-gradient-onyx: linear-gradient(to bottom right,
-      var(--navy-blue) 3%,
-      var(--dark-blue) 97%);
+  --bg-gradient-onyx: linear-gradient(to bottom right, 
+      #003459 3%, 
+      #00171f 97%);
   --bg-gradient-jet: linear-gradient(to bottom right,
       hsla(220, 70%, 10%, 0.251) 0%,
-      hsla(220, 70%, 5%, 0) 100%), var(--dark-blue);
+      hsla(220, 70%, 5%, 0) 100%), #00171f;
   --bg-gradient-blue-1: linear-gradient(to bottom right,
-      var(--neon-blue) 0%,
+      #adebff 0%,
       hsla(190, 100%, 50%, 0) 50%);
   --bg-gradient-blue-2: linear-gradient(135deg,
       hsla(190, 100%, 50%, 0.251) 0%,
-      hsla(190, 100%, 50%, 0) 59.86%), var(--dark-blue);
+      hsla(190, 100%, 50%, 0) 59.86%), #00171f;
   --border-gradient-onyx: linear-gradient(to bottom right,
-      hsla(220, 70%, 30%, 0.8) 0%,
-      hsla(220, 70%, 30%, 0) 50%);
+      hsla(202, 100%, 17%, 0.8) 0%,
+      hsla(202, 100%, 17%, 0) 50%);
   --text-gradient-blue: linear-gradient(to right,
-      var(--neon-blue),
-      var(--light-blue));
+      #adebff,
+      #eaeaea);
 
   /* solid */
 
-  --jet: var(--navy-blue);
-  --onyx: var(--dark-blue);
-  --eerie-black-1: hsl(240, 2%, 13%);
-  --eerie-black-2: hsl(240, 2%, 12%);
-  --smoky-black: hsl(220, 70%, 5%);
-  --white-1: hsl(0, 0%, 100%);
-  --white-2: hsl(0, 0%, 98%);
+  --jet: #003459;
+  --onyx: #00171f;
+  --eerie-black-1: #00171f;
+  --eerie-black-2: #003459;
+  --smoky-black: #00171f;
+  --white-1: #eaeaea;
+  --white-2: #eaeaea;
   --orange-yellow-crayola: #adebff;
   --vegas-gold: #adebff;
-  --light-gray: hsl(0, 0%, 84%);
-  --light-gray-70: hsla(0, 0%, 84%, 0.7);
-  --bittersweet-shimmer: hsl(0, 43%, 51%);
-  --neon-blue: #00f3ff;
-  --dark-blue: #0a192f;
-  --navy-blue: #112240;
-  --light-blue: #64ffda;
+  --light-gray: #eaeaea;
+  --light-gray-70: hsla(0, 0%, 92%, 0.7);
+  --bittersweet-shimmer: #adebff;
+  --neon-blue: #adebff;
+  --dark-blue: #00171f;
+  --navy-blue: #003459;
+  --light-blue: #eaeaea;
 
   /**
    * typography
@@ -171,7 +171,6 @@ body {
   position: relative;
   overflow-x: hidden;
 }
-
 
 
 
@@ -305,7 +304,7 @@ article.active {
 .has-scrollbar::-webkit-scrollbar-thumb {
   background: var(--navy-blue);
   border-radius: 6px;
-  border: 3px solid var(--dark-blue);
+  border: 3px solid var(--neon-blue);
 }
 
 .has-scrollbar::-webkit-scrollbar-thumb:hover {
@@ -785,12 +784,13 @@ main {
   bottom: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
+  background: #00171f7a;
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
   box-shadow: var(--shadow-2);
   z-index: 5;
+  backdrop-filter: blur(2px);
 }
 
 .navbar-list {
@@ -952,7 +952,7 @@ main {
 .testimonials-text {
   color: var(--light-gray);
   font-size: var(--fs-6);
-  font-weight: var(--fw-300);
+  font-weight: var (--fw-300);
   line-height: 1.6;
   display: -webkit-box;
   line-clamp: 4;
@@ -1177,7 +1177,7 @@ main {
   line-height: 1.6;
 }
 
-.timeline-item:not(:last-child)::before {
+.timeline-item:not(:last-child::before) {
   content: "";
   position: absolute;
   top: -25px;
@@ -1436,6 +1436,28 @@ main {
   font-weight: var(--fw-300);
 }
 
+.project-tech-stack {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.project-tech-stack i {
+  font-size: 20px;
+  color: var(--light-gray);
+  transition: color 0.25s;
+}
+
+.project-tech-stack i:hover {
+  color: var(--orange-yellow-crayola);
+}
+
+/* Technology-specific colors on hover */
+.fa-html5:hover { color: #E34F26; }
+.fa-css3-alt:hover { color: #1572B6; }
+.fa-js:hover { color: #F7DF1E; }
+.fa-gamepad:hover { color: #4CAF50; }
+
 
 
 
@@ -1579,7 +1601,7 @@ main {
 .form-input {
   color: var(--white-2);
   font-size: var(--fs-6);
-  font-weight: var(--fw-400);
+  font-weight: var (--fw-400);
   padding: 13px 20px;
   border: 1px solid var(--jet);
   border-radius: 14px;

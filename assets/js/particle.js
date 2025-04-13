@@ -3,27 +3,27 @@ particlesJS('particles-js', {
     number: {
       value: 100,
       density: {
-        enable: true,
-        value_area: 800
+        enable: false,
+        value_area: 100
       }
     },
     color: {
-      value: ['#00f3ff', '#64ffda']
+      value: ['#00f3ff', '#64ffda', '#f9f9f9']
     },
     shape: {
-      type: 'circle'
+      type: 'star'
     },
     opacity: {
-      value: 0.5,
-      random: true
+      value: 0,
+      random: false
     },
     size: {
-      value: 3,
+      value: 10,
       random: true
     },
     move: {
       enable: true,
-      speed: 50,
+      speed: 10,
       direction: 'none',
       random: true,
       out_mode: 'out'
